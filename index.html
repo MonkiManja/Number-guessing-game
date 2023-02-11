@@ -44,18 +44,19 @@
             if(guessCount === 1){
                 guesses.textContent = "Previous guesses: "; //This adds the text of previuos guesses
             }
-            guesses.textContent += `${userGuess}`; //This here adds the guesses
+            guesses.textContent += `${userGuess }`; //This here adds the guesses
 
             if(userGuess === randomNumber){ 
                 lastResult.textContent = "congratulations! You got it right!";
                 lastResult.style.backgroundColor = "green"; // so .style method works for modifying the css?
                 lowOrHi.textContent = ""; // empties the hi or low text
                 setGameOver(); // Ends game 
+            
             } else if(guessCount === 10) {   // 10 Are the lives that the player has
                 lastResult.textContent = "!!!GAME OVER!!!";
                 lowOrHi.textContent = "" // empties the hi or low text
                 setGameOver();
-                guessSubmit.addEventListener('click', checkGuess);
+           
             } else{
                 lastResult.textContent = "Wrong!"; 
                 lastResult.style.backgroundColor = "red"; 
@@ -71,8 +72,36 @@
 
         guessCount++;
         guessField.value ="";
+        guessField.focus(); 
+
+        guessSubmit.addEventListener('click', checkGuess); //Activates the game
+
+        function setGameOver(){
+            guessField.disabled = true;
+            guessSubmit.disables = true;
+            resetButton = document.createElement("button");
+            resetButton.textContent = "Start new game";
+            document.body.append(resetButton);
+            resetButton.addEventListener("click", resetGame)
+        }
+        function resetGame(){
+            guessCount = 1;
+            
+            const resetParas = document.querySelectorAll (".resultParas p") //Gets all the comments
+            for(const resetPara of resetParas){ //Resets comments like too high, etc.
+                resetPara.textContent = "";
+            }
+
+        resetButton.parentNode.removeChild(resetButton);
+
+        guessField.disabled = false;
+        guessSubmit.disabled = false;
+        guessField.value = '';
         guessField.focus();
 
+        lastResult.style.backgroundColor = 'white';
+        randomNumber = Math.floor(Math.random() * 100) + 1;
+        }
 
     </script>
   </body>
