@@ -6,7 +6,7 @@ What stopped me from doin the project by myself? I dont know how to interact wit
 
 This is some JS i did b4 starting to follow the tutorial
 
-/*
+
 
     function randomizer() {
         return 
@@ -35,5 +35,5 @@ This is some JS i did b4 starting to follow the tutorial
         return false;
     }
 
-*/
+
 
