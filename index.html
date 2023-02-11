@@ -55,6 +55,7 @@
                 lastResult.textContent = "!!!GAME OVER!!!";
                 lowOrHi.textContent = "" // empties the hi or low text
                 setGameOver();
+                guessSubmit.addEventListener('click', checkGuess);
             } else{
                 lastResult.textContent = "Wrong!"; 
                 lastResult.style.backgroundColor = "red"; 

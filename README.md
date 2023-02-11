@@ -7,15 +7,10 @@ What stopped me from doin the project by myself? I dont know how to interact wit
 This is some JS i did b4 starting to follow the tutorial
 
 /*
+
     function randomizer() {
         return 
     }
-
-
-    console.log("hello world!");
-
-
-
     function game(){
         let num = Math.floor(math.random() * 100) + 1;
         let guessList = []
