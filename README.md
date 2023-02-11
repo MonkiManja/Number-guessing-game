@@ -41,4 +41,4 @@ This is some JS i did b4 starting to follow the tutorial
 
 
 
-Finally, this is my first contact with methods like querySelector(), getElementById() and events. So this is my first contact of interaction between HTML and JS. I didn't just copy, obviously, i analyzed the code until i got a good understanding of everything. Great article :)
+Finally, i learned with this article methods like querySelector(), getElementById() and events. So this is my time doing interaction between HTML and JS. I didn't just copy, obviously, i analyzed the code until i got a good understanding of everything. Great article :)
