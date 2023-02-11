@@ -24,6 +24,7 @@
       <p class="lowOrHi"></p>
     </div>
 
+    <!--HERE IS WHERE HTML ENDS AND JS STARTS-->
     <script>
         let randomNumber = Math.floor(Math.random() * 100) + 1;
 
@@ -41,20 +42,35 @@
         function checkGuess(){
             const userGuess = Number(guessField.value);
             if(guessCount === 1){
-                guesses.textContent = "Previous guesses: ";
+                guesses.textContent = "Previous guesses: "; //This adds the text of previuos guesses
             }
-            guesses.textContent += `${userGuess}`;
+            guesses.textContent += `${userGuess}`; //This here adds the guesses
 
-            if(userGuess === randomNumber){
+            if(userGuess === randomNumber){ 
                 lastResult.textContent = "congratulations! You got it right!";
-                lastResult.style.backgroundColor = "green";
-                lowOrHi.textContent = "";
-                setGameOver();
-            } else if(guessCount === 10) {
+                lastResult.style.backgroundColor = "green"; // so .style method works for modifying the css?
+                lowOrHi.textContent = ""; // empties the hi or low text
+                setGameOver(); // Ends game 
+            } else if(guessCount === 10) {   // 10 Are the lives that the player has
                 lastResult.textContent = "!!!GAME OVER!!!";
+                lowOrHi.textContent = "" // empties the hi or low text
+                setGameOver();
+            } else{
+                lastResult.textContent = "Wrong!"; 
+                lastResult.style.backgroundColor = "red"; 
+                if(userGuess < randomNumber){ // Too high or too low texts. Self explanatory
+                    lowOrHi.textContent = "Too low!";
+                } else {
+                    lowOrHi.textContent = "Too High!";
+                }
+                
             }
         }
 
+
+        guessCount++;
+        guessField.value ="";
+        guessField.focus();
 
 
     </script>
